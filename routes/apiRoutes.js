@@ -25,6 +25,7 @@ app.post('/notes', (req, res) => {
     title: req.body.title,
     text: req.body.text
   };
+  db.push(newNote);
   fs.writeFileSync("./db/db.json", JSON.stringify(db), function(err, res) {
     if (err) {
         throw err;
