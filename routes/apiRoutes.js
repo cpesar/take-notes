@@ -19,13 +19,18 @@ app.get('/notes', (req, res) => {
 //This allows users to populate the server with data by sending data from the client side of the application to the server
 //Use Insomnia Core to test routes
 app.post('/notes', (req, res) => {
-  var newNote = req.body;
-  db.push(newNote);
-  updateDb();
-  if(errors){
-    res.status(400).json({ errors: errors });
-    return;
-  }
+  let newNote = { 
+    //id attaches a number that can be referenced for deleting the note
+    id: Math.floor(Math.random() * 5000),
+    title: req.body.title,
+    text: req.body.text
+  };
+  fs.writeFileSync("./db/db.json", JSON.stringify(db), function(err, res) {
+    if (err) {
+        throw err;
+    }
+  });
+  res.json(db);
 });
 
 
@@ -33,34 +38,34 @@ app.post('/notes', (req, res) => {
 
                 //HANDLE REQUESTS FOR A SPECIFIC NOTE ID:
 //GET ROUTE
-app.get('/notes/:id', (req, res) => {
-  const result = res.json(req.params.id, notes);
-  if(result){
-    res.json(result);
-  } else {
-    res.send(404);
-  }
-});
+// app.get('/notes/:id', (req, res) => {
+//   const result = res.json(req.params.id, notes);
+//   if(result){
+//     res.json(result);
+//   } else {
+//     res.send(404);
+//   }
+// });
 
 
 //DELETE ROUTE
-app.delete('/notes/:id', (req, res) => {
-  const params = [req.params.id];
+// app.delete('/notes/:id', (req, res) => {
+//   const params = [req.params.id];
 
-  db.query(params, (err, result) => {
-    if(err){
-      res.statusMessage(400).json({ error: res.message });
-      res.json({
-        message: 'Note not found'
-      });
-    } else {
-      res.json ({
-        message: 'deleted',
-        id: req.params.id
-      });
-    }
-  });
-});
+//   db.query(params, (err, result) => {
+//     if(err){
+//       res.statusMessage(400).json({ error: res.message });
+//       res.json({
+//         message: 'Note not found'
+//       });
+//     } else {
+//       res.json ({
+//         message: 'deleted',
+//         id: req.params.id
+//       });
+//     }
+//   });
+// });
 
   
               
