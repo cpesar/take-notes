@@ -10,8 +10,10 @@
  //ROUTES FOR API AND HTML FILES
  var apiRoutes = require("./routes/apiRoutes.js");
  var htmlRoutes = require("./routes/htmlRoutes.js");
- 
- 
+
+                    //MIDDLEWARE
+ //PARSE INCOMING STRING OR ARRAY DATA
+ //express.urlencoded({extended: true}) takes incoming POST data and converts to key/value pairs
  app.use(express.urlencoded({ extended: true }));
    // PARSE INCOMING JSON DATA 
    //express.json() METHOD- takes incoming POST data in the form of a JSON object and parses it into the req.body javascript object
