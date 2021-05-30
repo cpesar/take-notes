@@ -3,13 +3,13 @@ const app = require('express').Router();
 const fs = require('fs');
 const path = require('path');
 
-var db = require('../db/db.json');
+// var db = require('../db/db.json');
 
 
 //GET ROUTE TO READ THE db.json FILE AND RETURN ALL SAVED NOTES 
 //GET route = server to client
 app.get('/notes', (req, res) => {
-  db = JSON.parse(fs.readFileSync('./db/db.json', 'UTF-8'))
+  let db = JSON.parse(fs.readFileSync('./db/db.json', 'UTF-8'))
   res.json(db);
 });
 
@@ -25,6 +25,8 @@ app.post('/notes', (req, res) => {
     title: req.body.title,
     text: req.body.text
   };
+  //read file before append
+  let db = JSON.parse(fs.readFileSync('./db/db.json', 'UTF-8'))
   db.push(newNote);
   fs.writeFileSync("./db/db.json", JSON.stringify(db), function(err, res) {
     if (err) {
@@ -38,35 +40,33 @@ app.post('/notes', (req, res) => {
 
 
                 //HANDLE REQUESTS FOR A SPECIFIC NOTE ID:
-//GET ROUTE
-// app.get('/notes/:id', (req, res) => {
-//   const result = res.json(req.params.id, notes);
-//   if(result){
-//     res.json(result);
-//   } else {
-//     res.send(404);
-//   }
-// });
+// GET ROUTE
+app.get('/notes/:id', (req, res) => {
+  
+  let db = JSON.parse(fs.readFileSync('./db/db.json', 'UTF-8'))
+  const result = db.filter(note => note.id === req.params.id)
+  if(result){
+    res.json(result);
+  } else {
+    res.send(404);
+  }
+});
 
 
 //DELETE ROUTE
-// app.delete('/notes/:id', (req, res) => {
-//   const params = [req.params.id];
+app.delete('/notes/:id', (req, res) => {
 
-//   db.query(params, (err, result) => {
-//     if(err){
-//       res.statusMessage(400).json({ error: res.message });
-//       res.json({
-//         message: 'Note not found'
-//       });
-//     } else {
-//       res.json ({
-//         message: 'deleted',
-//         id: req.params.id
-//       });
-//     }
-//   });
-// });
+  let db = JSON.parse(fs.readFileSync('./db/db.json', 'UTF-8'))
+  //The filter() method will loop through the JSON data and find the note that is selected to be deleted
+  const deleteNote = db.filter(note => note.id != req.params.id)
+
+  fs.writeFileSync("./db/db.json", JSON.stringify(deleteNote), function(err, res) {
+    if (err) {
+        throw err;
+    }
+  });
+  res.json(deleteNote);
+});
 
   
               
