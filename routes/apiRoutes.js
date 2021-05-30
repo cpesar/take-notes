@@ -1,9 +1,12 @@
 //Start an instance of router
 const app = require('express').Router();
+//Require file system module
 const fs = require('fs');
+//Require path module
 const path = require('path');
 
-// var db = require('../db/db.json');
+//Use UUID package to generate random id
+const {v4 : uuidv4} = require('uuid');
 
 
 //GET ROUTE TO READ THE db.json FILE AND RETURN ALL SAVED NOTES 
@@ -19,9 +22,12 @@ app.get('/notes', (req, res) => {
 //This allows users to populate the server with data by sending data from the client side of the application to the server
 //Use Insomnia Core to test routes
 app.post('/notes', (req, res) => {
+  // const newNote = req.body;
+  // newNote.id = uuidv4();
   let newNote = { 
     //id attaches a number that can be referenced for deleting the note
     id: Math.floor(Math.random() * 5000),
+    // id: newNote.id = uuidv4();
     title: req.body.title,
     text: req.body.text
   };
@@ -44,6 +50,7 @@ app.post('/notes', (req, res) => {
 app.get('/notes/:id', (req, res) => {
   
   let db = JSON.parse(fs.readFileSync('./db/db.json', 'UTF-8'))
+   //The filter() method will loop through the JSON data and find the note with the id 
   const result = db.filter(note => note.id === req.params.id)
   if(result){
     res.json(result);
