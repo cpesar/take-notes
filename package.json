@@ -1,0 +1,24 @@
+{
+  "name": "take-notes",
+  "version": "1.0.0",
+  "description": "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)    <br />",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cpesar/take-notes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cpesar/take-notes/issues"
+  },
+  "homepage": "https://github.com/cpesar/take-notes#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
