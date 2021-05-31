@@ -24,7 +24,7 @@ app.get('/notes', (req, res) => {
 app.post('/notes', (req, res) => {
   
   let newNote = { 
-    //id attaches a number that can be referenced for deleting the note
+    //id attaches a number that can be referenced in get() and delete() routes
     id: Math.floor(Math.random() * 5000),
     title: req.body.title,
     text: req.body.text

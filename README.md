@@ -1,10 +1,10 @@
 # <p align="center"> Take Notes! </p>
   
-  [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0) 
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
   <br />
 
   ## Description
-  A note-taker application that can be used to write and save notes. The app uses Express.js back-end and saves and tretieves note data from a JSON file. 
+  A note-taker application that allows a user to write, save, and delete notes. The app uses Express.js back-end and saves and retrieves note data from a JSON file. 
   <br />
   
   
@@ -21,20 +21,20 @@
   
 
   ## :wrench: Installation
-  <a name="installation">Insert Heroku link</a>
+  <a name="installation">Use ``git clone`` to clone this repository to your local machine. Install the dependencies: ``npm i express``, ``npm i mysql2``  Once you have installed all of the dependencies, open up your command-line and run ``node server.js`` Navigate to your browser and open ``http://localhost:3000`` Click on the ``Get Started`` tab and begin entering notes. To save a note, click on the floppy disc icon in the upper right hand corner. To delete a note, click on the trash-can icon located next to your saved notes.</a>
   <br />
   
 
 
   ## :desktop_computer: Usage
-  <a name="usage">This application allows a user to write and save notes.</a>
+  <a name="usage">This application allows the user to write, save, and delete notes.</a>
   <br />
   
   
 
   ## :scroll: License 
-  <a name="license">[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)</a>
-  <br />This application is licensed under Mozilla. All rights reserved.<br />[Please click here to view the license](https://www.mozilla.org/en-US/MPL/2.0/FAQ/)
+  <a name="license">[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)</a>
+  <br />This application is licensed under MIT. All rights reserved.<br />[Please click here to view the license](https://opensource.org/licenses/MIT)
 
 
   ## :weight_lifting_man: Contribution
@@ -44,7 +44,7 @@
   
 
   ## :hourglass: Tests
-  <a name="tests">Jest for testing</a>
+  <a name="tests">No testing was done when building this app. To run tests install ``jest``</a>
   
 
   ## :grey_question: Questions
