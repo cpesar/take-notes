@@ -6,6 +6,12 @@
   ## Description
   A note-taker application that allows a user to write, save, and delete notes. The app uses Express.js back-end and saves and retrieves note data from a JSON file. 
   <br />
+  <br />
+  <br />
+  ![Screen Shot 2021-05-30 at 8 14 27 PM](https://user-images.githubusercontent.com/77510555/120130680-02197a00-c184-11eb-9b40-a06e408e6e14.png)
+  <br />
+  <br />
+  ![Screen Shot 2021-05-30 at 8 12 50 PM](https://user-images.githubusercontent.com/77510555/120130732-22e1cf80-c184-11eb-88e4-3efc58b60d79.png)
 
   
   
