@@ -6,7 +6,9 @@
   ## Description
   A note-taker application that allows a user to write, save, and delete notes. The app uses Express.js back-end and saves and retrieves note data from a JSON file. 
   <br />
-  
+  [Click here to view the app on Heroku](https://pesar-note-taker.herokuapp.com/)
+  <br />
+  [Click here to view a walk-through of the app](https://www.youtube.com/watch?v=d8eT7geSbQk)
   
   
 
