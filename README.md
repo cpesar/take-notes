@@ -27,7 +27,8 @@
   
 
   ## :wrench: Installation
-  <a name="installation">Use ``git clone`` to clone this repository to your local machine. <br />Install the dependencies: ``npm i express``, ``npm i mysql2`` <br /> Once you have installed all of the dependencies, open up your command-line and run ``node server.js``<br /> Navigate to your browser and open ``http://localhost:3000`` Click on the ``Get Started`` tab and begin entering notes. <br />To save a note, click on the floppy disc icon in the upper right hand corner. <br />To delete a note, click on the trash-can icon located next to your saved notes.</a>
+  <a name="installation">Use ``git clone`` to clone this repository to your local machine. <br /><br />
+  Install the dependencies: ``npm i express``, ``npm i mysql2`` <br /><br /> Once you have installed all of the dependencies, open up your command-line and run ``node server.js``<br /><br /> Navigate to your browser and open ``http://localhost:3000`` Click on the ``Get Started`` tab and begin entering notes. <br /><br />To save a note, click on the floppy disc icon in the upper right hand corner. <br /><br />To delete a note, click on the trash-can icon located next to your saved notes.</a>
   <br />
   <br />
   [Click here to view the app on Heroku](https://pesar-note-taker.herokuapp.com/)
