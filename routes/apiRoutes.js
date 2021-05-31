@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 
 //Use UUID package to generate random id
-const {v4 : uuidv4} = require('uuid');
+// const {v4 : uuidv4} = require('uuid');
 
 
 //GET ROUTE TO READ THE db.json FILE AND RETURN ALL SAVED NOTES 
@@ -22,12 +22,10 @@ app.get('/notes', (req, res) => {
 //This allows users to populate the server with data by sending data from the client side of the application to the server
 //Use Insomnia Core to test routes
 app.post('/notes', (req, res) => {
-  // const newNote = req.body;
-  // newNote.id = uuidv4();
+  
   let newNote = { 
     //id attaches a number that can be referenced for deleting the note
     id: Math.floor(Math.random() * 5000),
-    // id: newNote.id = uuidv4();
     title: req.body.title,
     text: req.body.text
   };
